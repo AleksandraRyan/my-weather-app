@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>WireFrame With HTML & CSS</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <form id="search-form">
+            <label for="name">Location</label>
+            <input type="text" class="style" id="enter-city" />
+            <button class="btn btn-primary btn-sm" id="search-input">
+              Search
+            </button>
+            <button class="btn btn-info btn-sm" id="current-location">
+              Current Location
+            </button>
+          </form>
+          <div class="col-celsius-fahrenheit">
+            <h3 class="ml-auto mt-2"><span id="temperature"> -3</span>°C</h3>
+            <!-- <a href="#" id="celsius-link" class="text-white">°C </a> -->
+            <!-- | -->
+            <!-- <a href="#" id="fahrenheit-link" class="text-white">°F</a> -->
+          </div>
+          <p id="description"></p>
+          <h2 class="ml-auto mt-3" id="date">friday 13:00</h2>
+        </div>
+        <div class="col-md-4">
+          <h4>Current location</h4>
+          <h1 id="city-name">Tallinn, Estonia</h1>
+        </div>
+        <div class="col-md-4 right-col">
+          <p>Wind: <span id="wind">15</span> km/h</p>
+          <p>Humidity: <span id="humidity">50</span>%</p>
+          <p>Feels like: <span id="feeling">5</span>°C</p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>Saturday</li>
+            <li class="icons">⛈</li>
+            <li>1° / -2°</li>
+          </ul>
+        </div>
+        <div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>Sunday</li>
+            <li class="icons">🌥</li>
+            <li>0° / 5°</li>
+          </ul>
+        </div>
+        <div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>Monday</li>
+            <li class="icons">🌥</li>
+            <li>5° / 10°</li>
+          </ul>
+        </div>
+        <div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>Tuesday</li>
+            <li class="icons">☁</li>
+            <li>2° / 5°</li>
+          </ul>
+        </div>
+        <div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>Wednesday</li>
+            <li class="icons">☁</li>
+            <li>2° / 5°</li>
+          </ul>
+        </div>
+        <div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>Thursday</li>
+            <li class="icons">🌥</li>
+            <li>12° / 15°</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>

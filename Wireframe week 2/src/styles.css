@@ -1,0 +1,60 @@
+body {
+  /* background: url('/images/weather.jpeg') no-repeat center center/cover; */
+  /* background: url('/images/weather-bg.jpg') no-repeat center/cover; */
+  /* background: url('https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); */
+  /* background: url('https://images.pexels.com/photos/186980/pexels-photo-186980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); */
+  /* background: url('/images/weather-bg2.jpg') no-repeat center center/cover; */
+  background: url('https://www.wallpapertip.com/wmimgs/173-1739030_wallpaper-hd-cloudy-weather-unique-hd-wallpapers-hd.jpg')
+    no-repeat center center/cover;
+  color: #fff;
+  height: 100vh;
+}
+
+.col-celsius-fahrenheit h3 {
+  display: inline;
+  margin-right: 10px;
+}
+
+.row .info {
+  position: relative;
+  top: 10px;
+  right: 0;
+}
+
+label {
+  font-size: 18px;
+  font-family: cursive;
+}
+
+input {
+  background-color: #fff;
+  outline: none;
+  border: none;
+  padding: 4px 0;
+  margin-right: 5px;
+  font-family: cursive;
+}
+
+.right-col {
+  font-family: cursive;
+  font-size: 20px;
+}
+
+p {
+  font-family: cursive;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-family: cursive;
+  text-align: center;
+  font-size: 16px;
+}
+
+li.icons {
+  font-size: 30px;
+  color: rgb(6, 54, 90);
+}
