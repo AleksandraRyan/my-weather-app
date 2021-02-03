@@ -59,3 +59,9 @@ li.icons {
   font-size: 30px;
   color: rgb(6, 54, 90);
 }
+
+@media (max-width: 698px) {
+  footer p {
+    color: #fff;
+  }
+}
