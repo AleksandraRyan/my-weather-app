@@ -83,14 +83,40 @@ function handleSubmit(event) {
 }
 // 3
 function search(city) {
-  // let cityName = 'keila';
-  // let country = 'estonia';
   let apiKey = 'b12b8c320e790354505a00b09bac7098';
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  // New axios call for forecast
+  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+  console.log(apiUrl);
+}
+
+function showForecast(response) {
+  let forecastElement = document.querySelector('#forecast');
+  let forecast = response.data.list[0];
+  console.log(forecast);
+
+  forecastElement.innerHTML = `<div
+          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+        >
+          <ul>
+            <li>12:00</li>
+            
+            <img src="http://openweathermap.org/img/wn/${
+              forecast.weather[0].icon
+            }@2x.png" id="icons">
+            <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
+    forecast.main.temp_min,
+  )}°</li>
+          </ul>
+        </div>`;
 }
 // 1
 let form = document.querySelector('#search-form');
 form.addEventListener('submit', handleSubmit);
+
+// Forecast
 
 search('Tallinn');

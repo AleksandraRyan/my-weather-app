@@ -60,6 +60,10 @@ li.icons {
   color: rgb(6, 54, 90);
 }
 
+#icons {
+  width: 60px;
+}
+
 @media (max-width: 698px) {
   footer p {
     color: #fff;
