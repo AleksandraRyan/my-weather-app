@@ -17,7 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>WireFrame With HTML & CSS</title>
+    <title>Vanilla-weather-app</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -25,26 +25,32 @@
         <div class="col-md-4">
           <form id="search-form">
             <label for="name">Location</label>
-            <input type="text" class="style" id="enter-city" />
-            <button class="btn btn-primary btn-sm" id="search-input">
+            <input type="text" class="style mb-2" id="enter-city" />
+            <button class="btn btn-primary btn-sm mb-3" id="search-input">
               Search
             </button>
-            <button class="btn btn-info btn-sm" id="current-location">
+            <button class="btn btn-info btn-sm mb-3" id="current-location">
               Current Location
             </button>
           </form>
           <div class="col-celsius-fahrenheit">
             <h3 class="ml-auto mt-2"><span id="temperature"> -3</span>°C</h3>
-            <!-- <a href="#" id="celsius-link" class="text-white">°C </a> -->
-            <!-- | -->
-            <!-- <a href="#" id="fahrenheit-link" class="text-white">°F</a> -->
+            <!-- <a href="#" id="celsius-link" class="text-white">°C </a>
+            |
+            <a href="#" id="fahrenheit-link" class="text-white">°F</a> -->
           </div>
           <p id="description"></p>
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt=""
+            id="icon"
+          />
           <h2 class="ml-auto mt-3" id="date">friday 13:00</h2>
         </div>
         <div class="col-md-4">
-          <h4>Current location</h4>
-          <h1 id="city-name">Tallinn, Estonia</h1>
+          <!-- <h4>Current location</h4> -->
+          <h1 id="city-name">Tallinn</h1>
+          <h2 id="country">Estonia</h2>
         </div>
         <div class="col-md-4 right-col">
           <p>Wind: <span id="wind">15</span> km/h</p>
@@ -52,7 +58,7 @@
           <p>Feels like: <span id="feeling">5</span>°C</p>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mt-5" id="forecast">
         <div
           class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
         >
@@ -120,6 +126,6 @@
       </footer>
     </div>
 
-    <script src="index.js"></script>
+    <script src="javascript.js"></script>
   </body>
 </html>
