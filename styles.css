@@ -8,7 +8,8 @@ body {
   background: url('https://www.wallpapertip.com/wmimgs/173-1739030_wallpaper-hd-cloudy-weather-unique-hd-wallpapers-hd.jpg')
     no-repeat center center/cover;
   color: #fff;
-  height: 110vh;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .col-celsius-fahrenheit h3 {
@@ -67,5 +68,10 @@ li.icons {
 @media (max-width: 698px) {
   footer p {
     color: #fff;
+  }
+
+  body {
+    background: url('https://www.wallpapertip.com/wmimgs/173-1739030_wallpaper-hd-cloudy-weather-unique-hd-wallpapers-hd.jpg')
+      no-repeat;
   }
 }

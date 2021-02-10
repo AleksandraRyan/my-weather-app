@@ -1,6 +1,6 @@
 // Current Temperature in city in country
 
-let city = 'keila';
+let city = 'Tallinn';
 let country = 'estonia';
 let apiKey = 'b12b8c320e790354505a00b09bac7098';
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=b12b8c320e790354505a00b09bac7098&units=metric`;
@@ -123,29 +123,14 @@ function search(city) {
   console.log(apiUrl);
 }
 
+// Forecast
 function showForecast(response) {
   let forecastElement = document.querySelector('#forecast');
-  let forecast = response.data.list[0];
-
-  forecastElement.innerHTML = `<div
-          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
-        >
-          <ul>
-            <li>${formatHours(forecast.dt * 1000)}</li>
-            
-            <img src="http://openweathermap.org/img/wn/${
-              forecast.weather[0].icon
-            }@2x.png" id="icons">
-            <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
-    forecast.main.temp_min,
-  )}°</li>
-          </ul>
-        </div>`;
-
-  forecast = response.data.list[1];
-  forecastElement.innerHTML =
-    forecastElement.innerHTML +
-    `<div
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div
           class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
         >
           <ul>
@@ -159,79 +144,42 @@ function showForecast(response) {
     )}°</li>
           </ul>
         </div>`;
-  forecast = response.data.list[2];
-  forecastElement.innerHTML =
-    forecastElement.innerHTML +
-    `<div
-          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
-        >
-          <ul>
-            <li>${formatHours(forecast.dt * 1000)}</li>
-            
-            <img src="http://openweathermap.org/img/wn/${
-              forecast.weather[0].icon
-            }@2x.png" id="icons">
-            <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
-      forecast.main.temp_min,
-    )}°</li>
-          </ul>
-        </div>`;
-  forecast = response.data.list[3];
-  forecastElement.innerHTML =
-    forecastElement.innerHTML +
-    `<div
-          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
-        >
-          <ul>
-            <li>${formatHours(forecast.dt * 1000)}</li>
-            
-            <img src="http://openweathermap.org/img/wn/${
-              forecast.weather[0].icon
-            }@2x.png" id="icons">
-            <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
-      forecast.main.temp_min,
-    )}°</li>
-          </ul>
-        </div>`;
-  forecast = response.data.list[4];
-  forecastElement.innerHTML =
-    forecastElement.innerHTML +
-    `<div
-          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
-        >
-          <ul>
-            <li>${formatHours(forecast.dt * 1000)}</li>
-            
-            <img src="http://openweathermap.org/img/wn/${
-              forecast.weather[0].icon
-            }@2x.png" id="icons">
-            <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
-      forecast.main.temp_min,
-    )}°</li>
-          </ul>
-        </div>`;
-  forecast = response.data.list[5];
-  forecastElement.innerHTML =
-    forecastElement.innerHTML +
-    `<div
-          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
-        >
-          <ul>
-            <li>${formatHours(forecast.dt * 1000)}</li>
-            
-            <img src="http://openweathermap.org/img/wn/${
-              forecast.weather[0].icon
-            }@2x.png" id="icons">
-            <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
-      forecast.main.temp_min,
-    )}°</li>
-          </ul>
-        </div>`;
+  }
 }
+
 // 1
 let form = document.querySelector('#search-form');
 form.addEventListener('submit', handleSubmit);
 
-// Forecast
+// Current
+
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+function showPosition(position) {
+  let heading = document.querySelector('#city-name');
+  let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
+  heading.innerHTML = `${latitude} ${longitude}`;
+  apiUrl =
+    'https://api.openweathermap.org/data/2.5/weather?q=&units=metric&appid=b12b8c320e790354505a00b09bac7098';
+  apiKey = 'b12b8c320e790354505a00b09bac7098';
+  axios.get(apiUrl).then(getCurrentPosition);
+}
+
+function searchLocation(position) {
+  let apiKey = 'b12b8c320e790354505a00b09bac7098';
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector('#current-location');
+currentLocationButton.addEventListener('click', getCurrentLocation);
 
 search('Tallinn');
