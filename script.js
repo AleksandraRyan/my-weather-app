@@ -25,7 +25,7 @@ function displayWeatherCondition(response) {
   let weatherIcon = document.querySelector('#icon');
   weatherIcon.setAttribute(
     'src',
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
   );
   date.innerHTML = formatDate(response.data.dt * 1000);
   console.log(response.data);
@@ -136,7 +136,7 @@ function showForecast(response) {
           <ul>
             <li>${formatHours(forecast.dt * 1000)}</li>
             
-            <img src="https://openweathermap.org/img/wn/${
+            <img src="http://openweathermap.org/img/wn/${
               forecast.weather[0].icon
             }@2x.png" id="icons">
             <li>${Math.round(forecast.main.temp_max)}° / ${Math.round(
