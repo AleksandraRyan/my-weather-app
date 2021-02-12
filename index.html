@@ -18,8 +18,12 @@
       <div class="row mt-5">
         <div class="col-md-4">
           <form id="search-form">
-            <label for="name">Location</label>
-            <input type="text" class="style mb-2" id="enter-city" />
+            <input
+              type="text"
+              class="style mb-2"
+              id="enter-city"
+              placeholder="Location"
+            />
             <button class="btn btn-primary btn-sm mb-3" id="search-input">
               Search
             </button>
@@ -28,29 +32,29 @@
             </button>
           </form>
           <div class="col-celsius-fahrenheit">
-            <h3 class="ml-auto mt-2"><span id="temperature"> -3</span>°C</h3>
             <!-- <a href="#" id="celsius-link" class="text-white">°C </a>
-            |
-            <a href="#" id="fahrenheit-link" class="text-white">°F</a> -->
+              |
+              <a href="#" id="fahrenheit-link" class="text-white">°F</a> -->
           </div>
+          <h3 class="ml-auto mt-2"><span id="temperature"> -3</span>°C</h3>
           <p id="description"></p>
           <img src="" alt="icon" id="icon" />
           <h2 class="ml-auto mt-3" id="date">friday 13:00</h2>
         </div>
         <div class="col-md-4">
-          <!-- <h4>Current location</h4> -->
           <h1 id="city-name">Tallinn</h1>
           <h2 id="country">Estonia</h2>
         </div>
         <div class="col-md-4 right-col">
           <p>Wind: <span id="wind">15</span> km/h</p>
+          <p>Clouds: <span id="rain">15</span> %</p>
           <p>Humidity: <span id="humidity">50</span>%</p>
           <p>Feels like: <span id="feeling">5</span>°C</p>
         </div>
       </div>
       <div class="row mt-5" id="forecast"></div>
 
-      <footer class="text-center mt-3 text-dark">
+      <footer class="text-center text-dark">
         <p>
           This project was coded by Aleksandra Ryan and is
           <a href="https://github.com/AleksandraRyan/my-weather-app"

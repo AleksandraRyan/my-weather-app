@@ -17,6 +17,9 @@ function displayWeatherCondition(response) {
   description.innerHTML = response.data.weather[0].description;
   let wind = document.querySelector('#wind');
   wind.innerHTML = Math.round(response.data.wind.speed);
+  let rain = document.querySelector('#rain');
+  rain.innerHTML = Math.round(response.data.clouds.all);
+  console.log(response.data);
   let humidity = document.querySelector('#humidity');
   humidity.innerHTML = Math.round(response.data.main.humidity);
   let feeling = document.querySelector('#feeling');
@@ -86,7 +89,12 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let h2 = document.querySelector('#date');
-h2.innerHTML = `${day}, ${date} ${month}, ${year}, ${hour}:${minutes}`;
+h2.innerHTML = `${day} ${date}
+<br>
+${month} ${year}
+<br>
+
+${hour}:${minutes}`;
 
 // Time stamp function
 function formatHours(timestamp) {
@@ -131,7 +139,7 @@ function showForecast(response) {
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `<div
-          class="col text-left bg-info p-4 d-flex align-items-center justify-content-center"
+          class="col text-left p-4 d-flex align-items-center justify-content-center" id="background"
         >
           <ul>
             <li>${formatHours(forecast.dt * 1000)}</li>
