@@ -54,6 +54,7 @@ function formatDate(timestamp) {
 let now = new Date();
 let date = now.getDate();
 let hour = now.getHours();
+let hours = now.getHours();
 if (hour < 10) {
   hours = `0${hours}`;
 }
