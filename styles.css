@@ -78,11 +78,11 @@ li.icons {
   background: #17a2b8;
 }
 
-@media (max-width: 698px) {
-  footer p {
-    color: #fff;
-  }
+footer p {
+  color: #000;
+}
 
+@media (max-width: 698px) {
   body {
     background: url('https://www.wallpapertip.com/wmimgs/173-1739030_wallpaper-hd-cloudy-weather-unique-hd-wallpapers-hd.jpg')
       no-repeat;
@@ -130,4 +130,16 @@ li.icons {
   #background {
     background: none;
   }
+
+  footer p {
+    color: #fff;
+  }
 }
+
+/* @media (max-width: 700px) {
+  #search-input,
+  #current-location {
+    display: block;
+    width: 33%;
+  }
+} */
