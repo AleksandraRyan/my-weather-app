@@ -82,7 +82,7 @@ footer p {
   color: #000;
 }
 
-@media (max-width: 698px) {
+@media (max-width: 700px) {
   body {
     background: url('https://www.wallpapertip.com/wmimgs/173-1739030_wallpaper-hd-cloudy-weather-unique-hd-wallpapers-hd.jpg')
       no-repeat;
@@ -135,11 +135,3 @@ footer p {
     color: #fff;
   }
 }
-
-/* @media (max-width: 700px) {
-  #search-input,
-  #current-location {
-    display: block;
-    width: 33%;
-  }
-} */
